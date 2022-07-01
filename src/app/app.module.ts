@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-// import { Daterangepicker } from "ng2-daterangepicker";
+import { Daterangepicker } from 'dist/ng2-daterangepicker';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    // Daterangepicker
+    Daterangepicker
   ],
   providers: [],
   bootstrap: [AppComponent]

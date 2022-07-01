@@ -12,7 +12,14 @@ import {
 import 'daterangepicker-use-dayjs'
 import $ from "jquery";
 import { DaterangepickerConfig } from "./ng2-daterangepicker.service";
-
+import dayjs from 'dayjs'
+import isoWeek from 'dayjs/plugin/isoWeek'
+import localeData from 'dayjs/plugin/localeData'
+import localizedFormat from 'dayjs/plugin/localizedFormat'
+import weekday from 'dayjs/plugin/weekday'
+import arraySupport from 'dayjs/plugin/arraySupport'
+import badMutable from 'dayjs/plugin/badMutable'
+import weekOfYear from 'dayjs/plugin/weekOfYear'
 @Directive({
   selector: '[daterangepicker]'
 })
@@ -41,6 +48,13 @@ export class DaterangepickerComponent implements AfterViewInit, OnDestroy, DoChe
   ) {
     this._differ['options'] = this.differs.find(this.options).create();
     this._differ['settings'] = this.differs.find(this.config.settings).create();
+    dayjs.extend(isoWeek);
+    dayjs.extend(localeData);
+    dayjs.extend(localizedFormat);
+    dayjs.extend(weekday);
+    dayjs.extend(arraySupport);
+    dayjs.extend(badMutable);
+    dayjs.extend(weekOfYear);
   }
 
   ngAfterViewInit() {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import dayjs from 'dayjs';
-// import { DaterangepickerConfig } from "ng2-daterangepicker";
+import { DaterangepickerConfig } from 'dist/ng2-daterangepicker';
 
 @Component({
   selector: 'app-root',
@@ -26,41 +26,41 @@ export class AppComponent {
     }
   }
 
-  constructor() {
-    // this.daterangepickerOptions.settings = {
-    //   locale: { format: 'YYYY-MM-DD' },
-    //   alwaysShowCalendars: false,
-    //   "opens": "right",
-    //   ranges: {
-    //     'Last Month': [dayjs().subtract(1, 'month'), dayjs()],
-    //     'Last 3 Months': [dayjs().subtract(4, 'month'), dayjs()],
-    //     'Last 6 Months': [dayjs().subtract(6, 'month'), dayjs()],
-    //     'Last 12 Months': [dayjs().subtract(12, 'month'), dayjs()],
-    //   }
-    // };
+  constructor(private daterangepickerOptions: DaterangepickerConfig) {
+    this.daterangepickerOptions.settings = {
+      locale: { format: 'YYYY-MM-DD' },
+      alwaysShowCalendars: false,
+      "opens": "right",
+      ranges: {
+        'Last Month': [dayjs().subtract(1, 'month'), dayjs()],
+        'Last 3 Months': [dayjs().subtract(4, 'month'), dayjs()],
+        'Last 6 Months': [dayjs().subtract(6, 'month'), dayjs()],
+        'Last 12 Months': [dayjs().subtract(12, 'month'), dayjs()],
+      }
+    };
   }
 
-  // public selectedDate(value: any, dateInput: any): void {
-  //   console.log(value);
-  //   dateInput.start = value.start;
-  //   dateInput.end = value.end;
-  // }
+  public selectedDate(value: any, dateInput: any): void {
+    console.log(value);
+    dateInput.start = value.start;
+    dateInput.end = value.end;
+  }
 
-  // public calendarEventsHandler(e: any): void {
-  //   console.log({ calendarEvents: e });
-  // }
+  public calendarEventsHandler(e: any): void {
+    console.log({ calendarEvents: e });
+  }
 
-  // public applyDatepicker(e: any) {
-  //   console.log({ applyDatepicker: e });
-  // }
+  public applyDatepicker(e: any) {
+    console.log({ applyDatepicker: e });
+  }
 
-  // public updateSettings(): void {
-  //   this.daterangepickerOptions.settings.locale = { format: 'YYYY/MM/DD' };
-  //   this.daterangepickerOptions.settings.ranges = {
-  //     '30 days ago': [dayjs().subtract(1, 'month'), dayjs()],
-  //     '3 months ago': [dayjs().subtract(4, 'month'), dayjs()],
-  //     '6 months ago': [dayjs().subtract(6, 'month'), dayjs()],
-  //     '7 months ago': [dayjs().subtract(12, 'month'), dayjs()],
-  //   };
-  // }
+  public updateSettings(): void {
+    this.daterangepickerOptions.settings.locale = { format: 'YYYY/MM/DD' };
+    this.daterangepickerOptions.settings.ranges = {
+      '30 days ago': [dayjs().subtract(1, 'month'), dayjs()],
+      '3 months ago': [dayjs().subtract(4, 'month'), dayjs()],
+      '6 months ago': [dayjs().subtract(6, 'month'), dayjs()],
+      '7 months ago': [dayjs().subtract(12, 'month'), dayjs()],
+    };
+  }
 }

@@ -1,14 +1,14 @@
 {
   "name": "ng2-daterangepicker-dayjs",
-  "version": "3.0.1",
+  "version": "3.0.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuan6956/ng2-daterangepicker-dayjs"
   },
   "bugs": {
-    "url": "https://github.com/evansmwendwa/ng2-daterangepicker-dayjs/issues"
+    "url": "https://github.com/tuan6956/ng2-daterangepicker-dayjs/issues"
   },
-  "homepage": "https://github.com/evansmwendwa/ng2-daterangepicker-dayjs#readme",
+  "homepage": "https://github.com/tuan6956/ng2-daterangepicker-dayjs#readme",
   "license": "MIT",
   "dependencies": {
     "daterangepicker-use-dayjs": "^3.1.1",
