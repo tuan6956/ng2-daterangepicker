@@ -9,7 +9,7 @@
 
 # dependencies
 /node_modules
-
+/project/ng2-daterangepicker/node_modules
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
