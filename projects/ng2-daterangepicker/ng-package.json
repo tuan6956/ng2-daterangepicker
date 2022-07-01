@@ -8,6 +8,7 @@
     "assets/**/*"
   ],
   "whitelistedNonPeerDependencies": [
-    "daterangepicker"
+    "daterangepicker-use-dayjs",
+    "dayjs"
   ]
 }

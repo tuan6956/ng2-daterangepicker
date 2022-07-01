@@ -9,7 +9,7 @@ import {
   ElementRef,
   KeyValueDiffers
 } from '@angular/core';
-import 'daterangepicker';
+import 'daterangepicker-use-dayjs'
 import $ from "jquery";
 import { DaterangepickerConfig } from "./ng2-daterangepicker.service";
 

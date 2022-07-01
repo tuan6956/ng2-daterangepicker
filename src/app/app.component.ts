@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import moment from 'moment';
-import { DaterangepickerConfig } from "ng2-daterangepicker";
+import dayjs from 'dayjs';
+// import { DaterangepickerConfig } from "ng2-daterangepicker";
 
 @Component({
   selector: 'app-root',
@@ -11,14 +11,14 @@ export class AppComponent {
   title = 'angular9';
 
   public chosenDate: any = {
-    start: moment().subtract(12, 'month'),
-    end: moment().subtract(6, 'month'),
+    start: dayjs().subtract(12, 'month'),
+    end: dayjs().subtract(6, 'month'),
   };
 
   public picker1 = {
     opens: 'left',
-    startDate: moment().subtract(5, 'day'),
-    endDate: moment(),
+    startDate: dayjs().subtract(5, 'day'),
+    endDate: dayjs(),
     isInvalidDate: function (date: any) {
       if (date.isSame('2017-09-26', 'day'))
         return 'mystyle';
@@ -26,41 +26,41 @@ export class AppComponent {
     }
   }
 
-  constructor(private daterangepickerOptions: DaterangepickerConfig) {
-    this.daterangepickerOptions.settings = {
-      locale: { format: 'YYYY-MM-DD' },
-      alwaysShowCalendars: false,
-      "opens": "right",
-      ranges: {
-        'Last Month': [moment().subtract(1, 'month'), moment()],
-        'Last 3 Months': [moment().subtract(4, 'month'), moment()],
-        'Last 6 Months': [moment().subtract(6, 'month'), moment()],
-        'Last 12 Months': [moment().subtract(12, 'month'), moment()],
-      }
-    };
+  constructor() {
+    // this.daterangepickerOptions.settings = {
+    //   locale: { format: 'YYYY-MM-DD' },
+    //   alwaysShowCalendars: false,
+    //   "opens": "right",
+    //   ranges: {
+    //     'Last Month': [dayjs().subtract(1, 'month'), dayjs()],
+    //     'Last 3 Months': [dayjs().subtract(4, 'month'), dayjs()],
+    //     'Last 6 Months': [dayjs().subtract(6, 'month'), dayjs()],
+    //     'Last 12 Months': [dayjs().subtract(12, 'month'), dayjs()],
+    //   }
+    // };
   }
 
-  public selectedDate(value: any, dateInput: any): void {
-    console.log(value);
-    dateInput.start = value.start;
-    dateInput.end = value.end;
-  }
+  // public selectedDate(value: any, dateInput: any): void {
+  //   console.log(value);
+  //   dateInput.start = value.start;
+  //   dateInput.end = value.end;
+  // }
 
-  public calendarEventsHandler(e: any): void {
-    console.log({ calendarEvents: e });
-  }
+  // public calendarEventsHandler(e: any): void {
+  //   console.log({ calendarEvents: e });
+  // }
 
-  public applyDatepicker(e: any) {
-    console.log({ applyDatepicker: e });
-  }
+  // public applyDatepicker(e: any) {
+  //   console.log({ applyDatepicker: e });
+  // }
 
-  public updateSettings(): void {
-    this.daterangepickerOptions.settings.locale = { format: 'YYYY/MM/DD' };
-    this.daterangepickerOptions.settings.ranges = {
-      '30 days ago': [moment().subtract(1, 'month'), moment()],
-      '3 months ago': [moment().subtract(4, 'month'), moment()],
-      '6 months ago': [moment().subtract(6, 'month'), moment()],
-      '7 months ago': [moment().subtract(12, 'month'), moment()],
-    };
-  }
+  // public updateSettings(): void {
+  //   this.daterangepickerOptions.settings.locale = { format: 'YYYY/MM/DD' };
+  //   this.daterangepickerOptions.settings.ranges = {
+  //     '30 days ago': [dayjs().subtract(1, 'month'), dayjs()],
+  //     '3 months ago': [dayjs().subtract(4, 'month'), dayjs()],
+  //     '6 months ago': [dayjs().subtract(6, 'month'), dayjs()],
+  //     '7 months ago': [dayjs().subtract(12, 'month'), dayjs()],
+  //   };
+  // }
 }
