@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import dayjs from 'dayjs';
 import { DaterangepickerConfig } from 'dist/ng2-daterangepicker';
-
+import localeData from "dayjs/plugin/localeData";
+import localeVi from 'dayjs/locale/vi';
+dayjs.extend(localeData);
+dayjs.locale(localeVi);
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,7 +29,7 @@ export class AppComponent {
     }
   }
 
-  constructor(private daterangepickerOptions: DaterangepickerConfig) {
+  constructor(private daterangepickerOptions: DaterangepickerConfig) {    
     this.daterangepickerOptions.settings = {
       locale: { format: 'YYYY-MM-DD' },
       alwaysShowCalendars: false,
